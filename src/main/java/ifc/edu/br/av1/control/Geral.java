@@ -7,13 +7,12 @@ package ifc.edu.br.av1.control;
 import ifc.edu.br.av1.c.model.Carro;
 import ifc.edu.br.av1.c.model.Pessoa;
 import ifc.edu.br.av1.dao.DAO;
-import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  *

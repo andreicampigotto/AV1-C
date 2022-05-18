@@ -13,6 +13,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -21,38 +22,52 @@ import jakarta.persistence.Table;
 public class Pessoa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="pgm4_andrei_pessoa_seq")
-    @SequenceGenerator(name = "pgm4_andrei_pessoa_seq", initialValue = 1)
-            
-    long id;
-    String nome;
-    String email;
-    float peso;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pgm4_andrei_pessoa_seq")
+    @SequenceGenerator(name = "pessoa_seq", initialValue = 1)
+    private Long id;
     
-    public Pessoa(long id, String nome, String email, float peso) {
-        this.id = id;
+    @ManyToOne()
+    Carro carro;
+
+    private String nome;
+    private String email;
+    private Float peso;
+
+    public Pessoa(Carro carro, String nome, String email, Float peso) {
+        this.carro = carro;
         this.nome = nome;
         this.email = email;
         this.peso = peso;
     }
 
-       public Pessoa(String nome, String email, float peso) {
+    public Pessoa(String nome, String email, Float peso) {
         this.nome = nome;
         this.email = email;
         this.peso = peso;
     }
-       
 
-    public String toString() {
-        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", peso=" + peso + '}';
+    public Pessoa() {
     }
 
-    public long getId() {
+    public Float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Float peso) {
+        this.peso = peso;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", peso=" + peso + '}';
     }
 
     public String getNome() {
@@ -71,11 +86,11 @@ public class Pessoa {
         this.email = email;
     }
 
-    public float getPeso() {
-        return peso;
+    public Carro getCarro() {
+        return carro;
     }
 
-    public void setPeso(float peso) {
-        this.peso = peso;
+    public void setCarro(Carro carro) {
+        this.carro = carro;
     }
 }
