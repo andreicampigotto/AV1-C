@@ -11,7 +11,7 @@ import jakarta.persistence.Persistence;
 
 /**
  *
- * @author andre
+ * @author andrei
  */
 public class TestarPessoa {
 

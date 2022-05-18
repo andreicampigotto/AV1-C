@@ -6,7 +6,7 @@ package ifc.edu.br.av1.c.model;
 
 /**
  *
- * @author andre
+ * @author andrei
  */
 
 import jakarta.persistence.Entity;

@@ -17,7 +17,7 @@ import java.util.Set;
 
 /**
  *
- * @author andre
+ * @author andrei
  */
 
 @Entity

@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  *
- * @author andre
+ * @author andrei
  */
 public class DAO {
     
